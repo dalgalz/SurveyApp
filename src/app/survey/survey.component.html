@@ -1,0 +1,32 @@
+<div>
+	<a [routerLink]="['/create']"> Create a New Poll</a>
+	<a href="" ng-click="logout($event)"> Logout</a>
+</div>
+<div>
+	<h2>Current Polls</h2>
+	<div id="search">
+	<form (submit)="search($event)">
+		<input type="text" name="search" name='searchTerm' [(ngModel)]='searchTerm'>
+		<input type="submit" name="search" value="Search">
+	</form>
+	</div>
+	<br>
+	<table id="polltable">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Survey Question</th>
+				<th>Date Posted</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor='let sv of surveys'>
+				<td>{{ sv.user.name }}</td>
+				<td><a [routerLink]="['/poll/' + sv._id]">{{ sv.question }}</a></td>
+				<td>{{ sv.createdAt}}</td>
+				<td><button *ngIf='sv.isOwnedByUser' (click)="deleteSurvey(sv)">Delete</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

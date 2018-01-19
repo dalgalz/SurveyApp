@@ -1,0 +1,26 @@
+<fieldset>
+<legend>Put the question and option here:</legend>
+<form (submit)='newPoll($event, pollForm)' #pollForm='ngForm'>
+	<div>
+		<label>Question:</label>
+		<input type="text" name="question" [(ngModel)]='survey.question' required minlength='3'>
+	</div>
+	<div>
+		<label>Option 1:</label>
+		<input type="text" name="opt1" [(ngModel)]='survey.pollOptions[0].answer' required minlength='3'>
+	</div>
+	<div>
+		<label>Option 2:</label>
+		<input type="text" name="opt2" [(ngModel)]='survey.pollOptions[1].answer' required minlength='3'>
+	</div>
+ 	<div>
+		<label>Option 3:</label>
+		<input type="text" name="opt3" [(ngModel)]='survey.pollOptions[2].answer' required minlength='3'>
+	</div>
+	<div>
+		<label>Option 4:</label>
+		<input type="text" name="opt4" [(ngModel)]='survey.pollOptions[3].answer' required minlength='3'>
+	</div> 
+	<button [hidden]='pollForm.invalid'>Create a Poll</button>
+</form>
+</fieldset>

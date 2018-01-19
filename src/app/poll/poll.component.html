@@ -1,0 +1,22 @@
+<a [routerLink]="['/dashboard']"> Go to Polls</a>
+
+<fieldset>
+<legend>{{ survey.question }}</legend>
+<h4>Click the vote button to choose one</h4>
+<table boarder=1>
+	<th>
+		<tr>
+			<td>Option</td>
+			<td>Current Count of Votes</td>
+			<td>Action</td>
+		</tr>
+	</th>
+	<tbody>
+		<tr *ngFor="let sv of survey.pollOptions; index as i;">
+			<td>{{sv.answer}}</td>
+			<td>{{sv.vote}}</td>
+			<td><button (click)="onVote(survey,sv._id,i)">Vote</button></td>
+		</tr>
+	</tbody>
+</table>
+</fieldset>
