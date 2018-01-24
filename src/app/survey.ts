@@ -1,5 +1,4 @@
 import { User } from './user';
-import { PollOption } from './polloption';
 
 export class Survey {
     _id: string;
