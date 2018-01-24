@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { CookieService } from 'ngx-cookie';
 
 import { User } from './user';
-import { BehaviorSubject, Observable } from 'Rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';

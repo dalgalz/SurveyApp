@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Http } from '@angular/http';
-import { BehaviorSubject, Observable } from 'Rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Survey } from './survey';
 import { Router } from '@angular/router';
 
