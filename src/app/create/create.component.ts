@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Survey } from './../survey';
 import { User } from './../user';
-import { PollOption } from './../pollOption';
 
 import { SurveyService } from './../survey.service';
 import { LoginService } from './../login.service';
