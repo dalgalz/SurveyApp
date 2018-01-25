@@ -7,7 +7,7 @@ const path = require('path');
 // create a variable that points to the path where all of the models live
 const models_path = path.resolve('./server/models');
 // connect to mongoose!
-mongoose.connect('mongodb://localhost/survey');
+mongoose.connect('mongodb://0.0.0.0/survey');
 mongoose.connection.on('connected', () => console.log('connected to mongodb'));
 
 mongoose.Promise = global.Promise;
