@@ -1,6 +1,7 @@
 // require express and path
 const express = require('express');
 const path = require('path');
+
 const bosdyParser = require('body-parser');
 const port = process.env.PORT || 8000;
 
@@ -16,7 +17,6 @@ require('./server/config/database');
 const routes_setter = require('./server/config/routes');
 // invoke the function stored in routes_setter and pass it the "app" variable
 routes_setter(app)
-
 //app.use(require('./server/config/routes/catchall-routes'));
 
 

@@ -14,7 +14,7 @@ export class SurveyService {
 
 
 getAllPoll(): Observable<Survey[]>{
-return this._http.get('http://localhost:8000/survey')
+return this._http.get('/survey')
   .map((response)=>{
       console.log(response);
       return response.json();
@@ -23,7 +23,7 @@ return this._http.get('http://localhost:8000/survey')
 }
 
 createPoll(survey:Survey): Observable<Survey[]>{
-  return this._http.post('http://localhost:8000/survey', survey)
+  return this._http.post('/survey', survey)
   .map((response)=>{
       console.log(response);
       return response.json();
@@ -33,7 +33,7 @@ createPoll(survey:Survey): Observable<Survey[]>{
 
 getAnswer(id:string): Observable<Survey>{
 console.log('This is ID: ' + id);
-return this._http.get('http://localhost:8000/poll/'+ id)
+return this._http.get('/poll/'+ id)
   .map((response)=>{
       console.log(response);
       return response.json();
@@ -42,14 +42,14 @@ return this._http.get('http://localhost:8000/poll/'+ id)
 }
 
 vote(survey:Survey, idAns: string): Observable<Survey>{
-  return this._http.put('http://localhost:8000/survey/'+ survey._id, {idAns: idAns})
+  return this._http.put('/survey/'+ survey._id, {idAns: idAns})
      .map( response => response.json())
      .catch((error)=> Observable.throw(error))
   }
 
   deleteSurvey(survey: Survey): Observable<Survey>{
   console.log("Gonna Delete in Service");
-    return this._http.delete(`http://localhost:8000/survey/${survey._id}`)
+    return this._http.delete(`/survey/${survey._id}`)
         .map( response => response.json())
         .catch((error)=> Observable.throw(error))
   }

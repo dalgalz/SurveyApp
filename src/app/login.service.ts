@@ -25,7 +25,7 @@ export class LoginService {
 
   register(user: User): Observable<User>{
     console.log('in reg func');
-    return this._http.post('http://localhost:8000/users', user)
+    return this._http.post('/users', user)
         .map((response) => {
             console.log('Reg Response', response);
             return response.json();
@@ -41,7 +41,7 @@ export class LoginService {
 
   login_attempt(user: User): Observable<User>{
     console.log('sending login request');
-    return this._http.post('http://localhost:8000/login', user)
+    return this._http.post('/login', user)
         .map((response) => {
             console.log('logged in!')
             return response.json();
